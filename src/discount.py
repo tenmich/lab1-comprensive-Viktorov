@@ -1,6 +1,3 @@
-import os
-
-
 def calculate_cart_total(cart_sum, tier, promos):
     price = cart_sum
     if cart_sum > 15000:
@@ -14,6 +11,7 @@ def calculate_cart_total(cart_sum, tier, promos):
         price = price * 0.97
     elif tier == 2:
         price = price * 0.93
+    # нижняя граница: итоговая скидка не может превышать 30%
     if price < cart_sum * 0.70:
-        price = cart_sum * 0.70  # нижняя граница: итоговая скидка не может превышать 30% от суммы корзины
+        price = cart_sum * 0.70
     return price
